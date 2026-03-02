@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Website streaming video terbaik">
+<title>Super Premium</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<li>
+    <button id="themeToggle" style="padding:5px 10px; border:none; border-radius:5px; cursor:pointer;">🌙</button>
+</li>
+<header class="header-container">
+  <div class="logo"><h1>SUPER PREMIUM</h1></div>
+
+  <nav class="menu">
+    <ul class="menu-left">
+      <li><a href="index.html">Beranda</a></li>
+
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Genre ▼</a>
+        <ul class="submenu">
+          <li><a href="genre/action.html">Action</a></li>
+          <li><a href="genre/romance.html">Romance</a></li>
+          <li><a href="genre/comedy.html">Comedy</a></li>
+          <li><a href="genre/horror.html">Horror</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Negara ▼</a>
+        <ul class="submenu">
+          <li><a href="negara/jepang.html">Jepang</a></li>
+          <li><a href="negara/korea.html">Korea</a></li>
+          <li><a href="negara/indonesia.html">Indonesia</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="menu-right">
+      <li>
+        <input type="text" id="searchInput" placeholder="Cari video...">
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- VIDEO GRID -->
+<section class="video-section">
+  <div class="video-grid">
+    <div class="video-card" data-video="assets/videos/Anime-eps1.mp4">
+      <img src="assets/images/Anime-eps1.jpg" alt="Anime-eps1">
+      <div class="overlay">▶</div>
+      <p>Anime-eps1</p>
+    </div>
+
+    <div class="video-card" data-video="assets/videos/Sunset-Drive.mp4">
+      <img src="assets/images/Sunset-Drive.png" alt="Sunset Drive">
+      <div class="overlay">▶</div>
+      <p>Sunset Drive</p>
+    </div>
+
+    <!-- Tambahkan video lain di sini -->
+  </div>
+</section>
+
+<!-- MODAL VIDEO -->
+<div id="videoPlayer" class="modal">
+  <span class="close">&times;</span>
+  <div class="modal-content">
+    <video id="video" controls></video>
+  </div>
+  <video width="640" controls>
+  <source src="assets/videos/Anime-eps1.mp4" type="video/mp4">
+  Browser kamu tidak mendukung video.
+</video>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+  </ul>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

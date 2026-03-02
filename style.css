@@ -1,0 +1,263 @@
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header-container {
+    padding: 20px;
+    text-align: center;
+    background: black;
+}
+
+/* ===== MENU ===== */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.menu-left, .menu-right {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-left li, .menu-right li {
+    position: relative;
+}
+
+.menu-left a, .menu-right input {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.menu-right input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+    position: relative; /* penting untuk submenu */
+}
+
+/* Submenu awal: tersembunyi dan sedikit naik */
+.dropdown .submenu {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: #333; /* warna background submenu */
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    min-width: 140px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10000;
+}
+
+/* Submenu tampil: fade + slide */
+.dropdown:hover .submenu,
+.dropdown.open .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Item submenu hover: highlight warna */
+.submenu li a {
+    color: white;
+    display: block;
+    padding: 5px 15px;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.submenu li a:hover {
+    background: #ff0707; /* warna saat hover */
+    color: #fffbfb;
+}
+
+/* ===== VIDEO GRID ===== */
+.video-section {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.video-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.video-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.4s ease;
+}
+
+.video-card:hover img {
+    transform: scale(1.08);
+    filter: brightness(0.8);
+}
+
+.video-card p {
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* Overlay play button */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.4s ease;
+    font-size: 30px;
+}
+
+.video-card:hover .overlay {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ===== MODAL ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+}
+
+.modal video {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-height: 70vh;
+    }
+
+    .modal video {
+        max-height: 70vh;
+    }
+}
+/* ===== LIGHT MODE ===== */
+body.light-mode {
+    background: #f5f5f5;
+    color: #111;
+}
+
+body.light-mode .header-container {
+    background: #eee;
+    color: #111;
+}
+
+body.light-mode .menu-left a,
+body.light-mode .menu-right input,
+body.light-mode .video-card p,
+body.light-mode .submenu li a,
+body.light-mode .footer ul li a {
+    color: #111;
+}
+
+body.light-mode .dropdown .submenu {
+    background: #ddd;
+}
+
+body.light-mode .submenu li a:hover {
+    background: #bbb;
+}
+
+body.light-mode .video-card img {
+    filter: brightness(1);
+}

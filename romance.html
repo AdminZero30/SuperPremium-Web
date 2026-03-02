@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romance - Super Premium</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- HEADER (copy dari index.html) -->
+<header class="header-container">
+  <div class="logo"><h1>SUPER PREMIUM</h1></div>
+  <nav class="menu">
+    <ul class="menu-left">
+      <li><a href="../index.html">Beranda</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Genre ▼</a>
+        <ul class="submenu">
+          <li><a href="action.html">Action</a></li>
+          <li><a href="romance.html">Romance</a></li>
+          <li><a href="comedy.html">Comedy</a></li>
+          <li><a href="horror.html">Horror</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Negara ▼</a>
+        <ul class="submenu">
+          <li><a href="../negara/jepang.html">Jepang</a></li>
+          <li><a href="../negara/korea.html">Korea</a></li>
+          <li><a href="../negara/indonesia.html">Indonesia</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="menu-right">
+      <li><input type="text" id="searchInput" placeholder="Cari video..."></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- VIDEO GRID -->
+<section class="video-section">
+  <h2>Genre: Romance</h2>
+  <div class="video-grid">
+    <div class="video-card" data-video="../assets/videos/Action-Movie.mp4">
+      <img src="../assets/images/Action-Movie.png" alt="Action Movie">
+      <div class="overlay">▶</div>
+      <p>Romance Movie</p>
+    </div>
+    <!-- Tambahkan video Romance lainnya -->
+  </div>
+</section>
+
+<!-- MODAL VIDEO -->
+<div id="videoPlayer" class="modal">
+  <span class="close">&times;</span>
+  <div class="modal-content">
+    <video id="video" controls></video>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <ul>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+    <li><a href="../privacy.html">Privacy Policy</a></li>
+  </ul>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
